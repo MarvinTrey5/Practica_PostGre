@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostgreSQL</title>
+    <style>
+    body {
+        background-color: skyblue;
+        font-family: cursive;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        color: darkolivegreen;
+        background-color: cornsilk;
+        font-size: 35px;
+        text-shadow: 2px 2px 5px black;
+        box-shadow: 2px 2px 2px 2px black;
+    }
+
+    table {
+        border: 2px solid blue;
+        margin-top: 20px; /* Ajusta según sea necesario */
+    }
+    caption{
+        text-shadow: 2px 2px 5px black;
+        box-shadow: 2px 2px 2px 2px black;
+        background-color: white;
+        color: black;
+        font-size: 20px;
+        font-family: monospace;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 3px solid blue;
+        background-color: ghostwhite;
+        font-family: monospace;
+    }
+
+    tr {
+        text-align: center;
+        font-style: italic;
+    }
+
+    td {
+        background-color: gold;
+    }
+</style>
+</head>
+<body> 
+    <h1> Listado de Clientes </h1>
+    <table>
+        <caption>By Marvin Fernánez</caption>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>DUI</th>
+        </tr>
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.Nombre }}</td>
+            <td>{{ cliente.Apellido }}</td>
+            <td>{{ cliente.Edad }}</td>
+            <td>{{ cliente.DUI }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
