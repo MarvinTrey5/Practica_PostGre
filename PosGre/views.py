@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from . models import Cliente, Area, empleado, Venta
 # Create your views here.
-
+# Se crea cada view para obtener el archivo html de cada tabla.
 def cliente_lista(request):
     clientes = Cliente.objects.all()
     return render(request, 'cliente_lista.html', {'clientes': clientes})
